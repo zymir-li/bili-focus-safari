@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Bili Focus — 主动搜索，不被推荐</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="ambient ambient-one" aria-hidden="true"></div>
+      <div class="ambient ambient-two" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Bili Focus 首页">
+          <span class="brand-symbol" aria-hidden="true"></span>
+          <span class="brand-name">BILI / FOCUS</span>
+        </a>
+
+        <div class="focus-status" aria-label="专注模式已开启">
+          <span class="status-dot"></span>
+          FOCUS MODE
+          <span class="status-state">ON</span>
+        </div>
+      </header>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-kicker">
+          <span>ONE DELIBERATE ACTION</span>
+          <span class="kicker-line"></span>
+        </div>
+
+        <h1 id="hero-title">带着问题进入</h1>
+
+        <p class="hero-copy">
+          搜索是唯一的主入口。<br>
+          其余功能保持安静，但随时可达。
+        </p>
+
+        <form class="search-panel" id="search-form" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m21 21-4.34-4.34"></path>
+            <circle cx="11" cy="11" r="8"></circle>
+          </svg>
+          <label class="sr-only" for="bili-search">搜索 Bilibili</label>
+          <input
+            id="bili-search"
+            type="search"
+            name="keyword"
+            autocomplete="off"
+            placeholder="今天想查找什么？"
+          >
+          <button type="submit">
+            <span>搜索</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+        </form>
+
+        <nav class="quick-nav" aria-label="Bilibili 快捷入口">
+          <a class="quick-link" data-shortcut="space" href="https://space.bilibili.com/">
+            <span class="quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="5"></circle>
+                <path d="M20 21a8 8 0 0 0-16 0"></path>
+              </svg>
+            </span>
+            <span class="quick-text">
+              <strong>个人空间</strong>
+              <small>主页与投稿</small>
+            </span>
+            <span class="quick-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="quick-link" data-shortcut="dynamic" href="https://t.bilibili.com/">
+            <span class="quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9"></path>
+                <path d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5"></path>
+                <circle cx="12" cy="9" r="2"></circle>
+                <path d="M16.2 4.8c2 2 2.26 5.11.8 7.47"></path>
+                <path d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1"></path>
+                <path d="M9.5 18h5"></path>
+                <path d="m8 22 4-11 4 11"></path>
+              </svg>
+            </span>
+            <span class="quick-text">
+              <strong>动态</strong>
+              <small>关注的人</small>
+            </span>
+            <span class="quick-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="quick-link" data-shortcut="history" href="https://www.bilibili.com/account/history">
+            <span class="quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+                <path d="M12 7v5l4 2"></path>
+              </svg>
+            </span>
+            <span class="quick-text">
+              <strong>历史</strong>
+              <small>继续观看</small>
+            </span>
+            <span class="quick-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="quick-link" data-shortcut="favorites" href="https://space.bilibili.com/">
+            <span class="quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"></path>
+              </svg>
+            </span>
+            <span class="quick-text">
+              <strong>收藏</strong>
+              <small>已保存内容</small>
+            </span>
+            <span class="quick-arrow" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-actions">
+          <button type="button" class="utility-button" id="theme-button">
+            <span class="theme-icon" aria-hidden="true">
+              <svg class="moon-icon" viewBox="0 0 24 24">
+                <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path>
+              </svg>
+              <svg class="sun-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+              </svg>
+            </span>
+            <span class="utility-label">深色</span>
+          </button>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

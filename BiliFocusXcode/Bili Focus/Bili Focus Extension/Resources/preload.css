@@ -1,0 +1,14 @@
+html {
+  visibility: hidden !important;
+  background: #f4f3ef !important;
+}
+
+html[data-bili-focus-ready] {
+  visibility: visible !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #11120f !important;
+  }
+}
