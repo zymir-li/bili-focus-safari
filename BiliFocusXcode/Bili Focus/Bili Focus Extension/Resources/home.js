@@ -36,6 +36,7 @@
   const searchInput = document.getElementById("bili-search");
   const themeButton = document.getElementById("theme-button");
   const themeLabel = themeButton.querySelector(".utility-label");
+  const focusToggle = document.getElementById("focus-toggle");
   const shortcutLinks = [...document.querySelectorAll("[data-shortcut]")];
 
   let theme = "light";
@@ -90,6 +91,13 @@
     const nextTheme = theme === "light" ? "dark" : "light";
     applyTheme(nextTheme);
     await storageSet({ theme: nextTheme });
+  });
+
+  focusToggle.addEventListener("click", async () => {
+    focusToggle.disabled = true;
+    focusToggle.setAttribute("aria-label", "正在关闭专注模式");
+    await storageSet({ focusEnabled: false });
+    window.location.reload();
   });
 
   document.addEventListener("keydown", (event) => {
