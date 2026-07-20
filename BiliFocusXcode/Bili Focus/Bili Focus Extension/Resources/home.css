@@ -218,13 +218,40 @@ svg {
 }
 
 .focus-status {
+  appearance: none;
   display: inline-flex;
   align-items: center;
   gap: 9px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
   color: var(--text-soft);
+  font-family: inherit;
   font-size: 11px;
   font-weight: 650;
   letter-spacing: 0.12em;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.focus-status:hover {
+  background: var(--surface);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.focus-status:focus-visible {
+  outline: 2px solid rgba(251, 114, 153, 0.56);
+  outline-offset: 3px;
+}
+
+.focus-status:disabled {
+  cursor: wait;
+  opacity: 0.62;
 }
 
 .status-dot {

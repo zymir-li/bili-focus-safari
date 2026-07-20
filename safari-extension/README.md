@@ -6,6 +6,7 @@ This directory contains the source resources used by Bili Focus:
 - `preload.css` — prevents the original homepage from flashing
 - `redirect.js` — replaces the homepage without changing the address bar
 - `home.html`, `home.css`, `home.js` — focus homepage UI and interactions
+- focus mode state is stored locally and can be toggled from either homepage
 - `icons/` — extension icons
 
 For installation and signing instructions, see the [project README](../README.md).
